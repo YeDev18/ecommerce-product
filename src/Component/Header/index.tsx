@@ -5,7 +5,7 @@ import profil from '../../assets/images/image-avatar.png';
 
 const Header = () => {
   return (
-    <nav className="container max-w-auto mx-auto flex flex-col">
+    <nav className="container max-w-auto mx-auto h-[15vh] flex flex-col">
       <div className="w-full px-8 py-6 flex justify-between">
         <div className="flex justify-between items-center gap-16 ">
           <div className="flex justify-center items-center">
@@ -15,7 +15,10 @@ const Header = () => {
           <ul className="flex font-sans font-[100] cursor-pointer text-lg text-DarkGrayishBlue gap-12 ">
             {Headers.map((header: string, index: number) => {
               return (
-                <li key={index} className="hover:text-VeryDarkBlue">
+                <li
+                  key={index}
+                  className=" font-semibold hover:text-VeryDarkBlue"
+                >
                   {' '}
                   {header}
                 </li>

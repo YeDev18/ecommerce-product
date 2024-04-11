@@ -57,7 +57,7 @@ const F_Product = () => {
                 fill-rule="nonzero"
               />
             </svg>
-            <p className="text-LightGrayishBlue font-semibold">Add Cart</p>
+            <p className="text-LightGrayishBlue font-semibold">Add viv Cart</p>
           </button>
         </div>
       </div>
