@@ -14,6 +14,13 @@ export default {
       LightGrayishBlue: 'hsl(223, 64%, 98%)',
       White: 'hsl(0, 0%, 100%)',
     },
+    container: {
+      padding: {
+        // default: '2rem',
+        // md: '5rem',
+      },
+    },
+
     extend: {},
   },
   plugins: [],

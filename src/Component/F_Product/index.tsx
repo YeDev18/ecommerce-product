@@ -1,9 +1,9 @@
-import cart from '../../assets/images/icon-cart.svg';
+// import cart from '../../assets/images/icon-cart.svg';
 import minus from '../../assets/images/icon-minus.svg';
 import plus from '../../assets/images/icon-plus.svg';
 const F_Product = () => {
   return (
-    <div className="container mx-auto flex justify-between items-center h-[85vh] px-14">
+    <div className="container mx-auto hidden justify-between items-center h-[85vh] px-14">
       <div className="flex flex-col w-1/2 gap-y-4">
         <div className="w-[28rem] h-[28rem] bg-SecondPrimary rounded-lg"></div>
         <div className="flex flex-row justify-between w-[28rem]">
@@ -57,7 +57,7 @@ const F_Product = () => {
                 fill-rule="nonzero"
               />
             </svg>
-            <p className="text-LightGrayishBlue font-semibold">Add viv Cart</p>
+            <p className="text-LightGrayishBlue font-semibold">Add Cart</p>
           </button>
         </div>
       </div>
