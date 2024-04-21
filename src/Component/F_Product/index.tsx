@@ -1,6 +1,3 @@
-// import cart from '../../assets/images/icon-cart.svg';
-import minus from '../../assets/images/icon-minus.svg';
-import plus from '../../assets/images/icon-plus.svg';
 const F_Product = () => {
   return (
     <div className="container mx-auto hidden justify-between items-center h-[85vh] px-14">
@@ -40,13 +37,13 @@ const F_Product = () => {
         <div className="flex flex-row gap-6">
           <div className="flex flex-row w-[10.5rem] h-[3.5rem] bg-LightGrayishBlue rounded-lg">
             <button className="w-1/3 text-firstPrimary">
-              <img className="block mx-auto" src={minus} alt="Minus" />
+              <img className="block mx-auto" src="" alt="Minus" />
             </button>
             <p className="w-1/3  flex justify-center items-center text-VeryDarkBlue font-semibold">
               5
             </p>
             <button className="w-1/3 text-firstPrimary font-bold block mx-auto">
-              <img className="block mx-auto" src={plus} alt="Plus" />
+              <img className="block mx-auto" src="" alt="Plus" />
             </button>
           </div>
           <button className="w-[16rem] h-[3.5rem] bg-firstPrimary flex justify-center items-center gap-4 rounded-lg shadow-lg shadow-firstPrimary">
