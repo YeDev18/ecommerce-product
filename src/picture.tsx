@@ -50,14 +50,16 @@ export const Menu = () => {
 
 export const Minus = () => {
   return (
-    <svg width="12" height="4">
-      <defs>
-        <path
-          d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z"
-          id="a"
-        />
-      </defs>
-      <use fill="#FF7E1B" fillRule="nonzero" />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 100 100"
+    >
+      <path
+        fill="currentColor"
+        d="M88.447 38.528H11.554a2.024 2.024 0 0 0-2.024 2.024v18.896c0 1.118.907 2.024 2.024 2.024h76.892a2.024 2.024 0 0 0 2.023-2.024V40.552a2.023 2.023 0 0 0-2.022-2.024"
+      />
     </svg>
   );
 };
@@ -78,14 +80,13 @@ export const Next = () => {
 
 export const Plus = () => {
   return (
-    <svg width="12" height="12">
-      <defs>
-        <path
-          d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z"
-          id="b"
-        />
-      </defs>
-      <use fill="#FF7E1B" fillRule="nonzero" />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 20 20"
+    >
+      <path fill="currentColor" d="M17 7v3h-5v5H9v-5H4V7h5V2h3v5z" />
     </svg>
   );
 };

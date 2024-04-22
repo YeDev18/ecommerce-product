@@ -8,7 +8,7 @@ const Header = () => {
     return setOpen(!open);
   };
   return (
-    <nav className=" container relative mx-auto flex h-[15vh] flex-col lg:container">
+    <nav className="container relative mx-auto flex flex-col lg:h-[15vh]">
       <div>
         <div
           className={
@@ -38,7 +38,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
-      <div className="flex w-full justify-between px-8 py-6">
+      <div className="flex w-full justify-between p-4 lg:px-8  lg:py-6">
         <div className="flex items-center justify-between gap-6 lg:gap-16 ">
           <button className="lg:hidden" onClick={handleClick}>
             {open && <Menu />}
