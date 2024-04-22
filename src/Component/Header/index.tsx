@@ -21,7 +21,7 @@ const Header = () => {
           className={
             open
               ? 'hidden'
-              : 'fixed  flex h-screen w-3/5 flex-col gap-16 overflow-x-hidden bg-White px-8 py-10 lg:hidden '
+              : 'fixed  flex h-screen w-3/5 flex-col gap-16 overflow-x-hidden bg-White px-4 py-8 lg:hidden '
           }
         >
           <button onClick={handleClick}>
