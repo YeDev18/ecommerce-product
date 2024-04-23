@@ -63,7 +63,10 @@ const Header = () => {
           </ul>
         </div>
         <div className="flex items-center justify-center gap-4 md:gap-8 ">
-          <Cart />
+          <span className="cursor-pointer">
+            <Cart />
+          </span>
+
           <img
             src={picture}
             alt="L'Avatar"
@@ -72,6 +75,7 @@ const Header = () => {
         </div>
       </div>
       <div className=" mx-8 border-b-GrayishBlue lg:border-b"></div>
+      <div className=" absolute inset-x-2/4 top-[10vh] hidden h-64 w-full  -translate-x-1/2 -translate-y-1/2 bg-VeryDarkBlue lg:right-0 lg:w-80 lg:bg-firstPrimary"></div>
     </nav>
   );
 };

@@ -1,5 +1,13 @@
+import { useState } from 'react';
 import { Minus, Plus } from '../../picture';
 const F_Product = () => {
+  const [number, setNumber] = useState(0);
+  const plus = () => {
+    return setNumber(number + 1);
+  };
+  const minus = () => {
+    return number != 0 && setNumber(number - 1);
+  };
   return (
     <div className="container mx-auto flex flex-col justify-between lg:h-[85vh] lg:flex-row lg:items-center lg:gap-8 lg:px-14">
       <div className="hidden w-1/2 flex-col gap-y-4 lg:flex">
@@ -37,13 +45,19 @@ const F_Product = () => {
         </div>
         <div className="flex flex-col gap-6 lg:flex-row">
           <div className="flex h-14 w-full flex-row rounded-lg bg-LightGrayishBlue lg:w-[10.5rem]">
-            <button className="flex w-1/3 items-center justify-center text-firstPrimary">
+            <button
+              className="flex w-1/3 items-center justify-center text-firstPrimary"
+              onClick={minus}
+            >
               <Minus />
             </button>
             <p className="flex w-1/3 items-center justify-center font-semibold text-VeryDarkBlue">
-              5
+              {number}
             </p>
-            <button className="flex w-1/3 items-center justify-center font-bold text-firstPrimary">
+            <button
+              className="flex w-1/3 items-center justify-center font-bold text-firstPrimary"
+              onClick={plus}
+            >
               <Plus />
             </button>
           </div>
