@@ -2,6 +2,7 @@ import { useState } from 'react';
 import picture from '../../assets/images/image-avatar.png';
 import { Headers } from '../../data';
 import { Cart, Close, Filter, Logo, Menu } from '../../picture';
+
 const Header = () => {
   const [open, setOpen] = useState(true);
   const handleClick = () => {

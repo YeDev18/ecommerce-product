@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Product } from '../../data';
 import { Minus, Plus } from '../../picture';
 const F_Product = () => {
   const [number, setNumber] = useState(0);
@@ -22,21 +23,25 @@ const F_Product = () => {
       <div className="h-[40vh] bg-firstPrimary lg:hidden "></div>
       <div className="flex flex-col justify-start gap-4 p-4 lg:w-1/2 lg:gap-8 lg:py-0">
         <h4 className="text-sm font-semibold tracking-wide text-firstPrimary lg:text-lg lg:tracking-widest">
-          SNEAKER COMPAGNY
+          {Product.category}
         </h4>
         <h2 className="font-sans text-3xl font-bold tracking-wider text-VeryDarkBlue lg:text-4xl">
-          Fall Limited Edition Sneakers
+          {Product.name}
         </h2>
         <p className=" text-base font-medium leading-relaxed -tracking-tight text-DarkGrayishBlue lg:pr-7 lg:text-lg">
-          These low-profile sneakers are your perfect casual wear companion.
-          Featuring a durable rubber outer sole, they'll withstand everything
-          the weather can offer.
+          {Product.description}
         </p>
         <div className="flex w-48 flex-row gap-4">
           <div className=" flex flex-col gap-1">
-            <p className="text-3xl font-bold text-VeryDarkBlue">$125.00</p>
+            <p className="text-3xl font-bold text-VeryDarkBlue">
+              $
+              {(
+                Product.price -
+                (Product.price * Product.percentReduce) / 100
+              ).toFixed(2)}
+            </p>
             <p className="text-lg font-medium text-GrayishBlue">
-              <s>$250.00</s>
+              <s>{Product.price.toFixed(2)}</s>
             </p>
           </div>
           <p className="mt-1 h-fit rounded-lg bg-SecondPrimary px-3 py-0.5 font-semibold text-firstPrimary">
