@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { Filter } from '../../../picture';
 
 const Panier = () => {
+  const [tableCart, setTableCart] = useState([]);
   return (
     <div className="relative top-[10vh] flex h-fit w-[95%] flex-col  rounded-xl bg-White shadow-lg lg:absolute lg:right-0 lg:w-[22rem] lg:bg-White">
       <div className="border-b border-GrayishBlue">
