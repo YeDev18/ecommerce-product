@@ -1,10 +1,13 @@
-import { useState } from 'react';
 import { Filter } from '../../../picture';
+import { useCart } from '../../CartContext';
 
 const Panier = () => {
-  const [tableCart, setTableCart] = useState([]);
+  // const [tableCart, setTableCart] = useState([]);
+  const panier = useCart()?.table;
+  console.log(panier);
+
   return (
-    <div className="relative top-[10vh] flex h-fit w-[95%] flex-col  rounded-xl bg-White shadow-lg lg:absolute lg:right-0 lg:w-[22rem] lg:bg-White">
+    <div className="absolute top-[10vh] ml-2 flex h-fit w-[95%]  min-w-[22rem] flex-col rounded-xl bg-White shadow-lg md:ml-4 lg:right-4 lg:w-72 xl:right-0">
       <div className="border-b border-GrayishBlue">
         <h3 className="py-6 pl-2 text-lg font-semibold">Cart</h3>
       </div>
@@ -21,6 +24,23 @@ const Panier = () => {
                 <span className="font-bold text-VeryDarkBlue">$375.00</span>
               </p>
             </div>
+
+            <button>
+              <Filter />
+            </button>
+          </div>
+          <div className="flex items-center justify-around gap-4">
+            <div className=" size-12 rounded-lg bg-DarkGrayishBlue"></div>
+            <div className="flex flex-col justify-around  ">
+              <p className="text-DarkGrayishBlue">
+                Fall Limited Edition Sneakers
+              </p>
+              <p className="text-DarkGrayishBlue">
+                $125.00 x 3{' '}
+                <span className="font-bold text-VeryDarkBlue">$375.00</span>
+              </p>
+            </div>
+
             <button>
               <Filter />
             </button>

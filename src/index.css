@@ -11,3 +11,29 @@
     src: url(./font) format('ttf');
   }
 }
+
+@layer components {
+  .corps {
+    border-color: red;
+    display: none;
+    transition: display 2s;
+  }
+  .header {
+    position: relative;
+  }
+  .header::after {
+    position: absolute;
+    content: '';
+    background-color: nonehsl(20, 1%, 53%);
+    height: 8px;
+    width: 100%;
+    bottom: -2.7rem;
+    left: 0;
+    z-index: -2;
+    /* display: none; */
+    transition: all 0.3s;
+  }
+  .header:hover:after {
+    background-color: hsl(26, 100%, 55%);
+  }
+}
