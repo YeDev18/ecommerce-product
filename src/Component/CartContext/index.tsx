@@ -11,6 +11,9 @@ type Table = {
 
 type Context = {
   table: Table[];
+  quantity: number;
+  MinusCart: () => void;
+  PlusCart: () => void;
   AddToCart: (product: Product) => void;
   DeleteCart: (index: number) => void;
 };
@@ -30,6 +33,7 @@ const MyCart = createContext<Context | null>(null);
 
 const CartContext: FC<Props> = ({ children }) => {
   // const tableOne =u;
+  const [quantity, setQuantity] = useState<number>(1);
   const [table, setTable] = useState<Table[]>([]);
   const AddToCart = (product: Product) => {
     setTable([...table, product]);
@@ -37,8 +41,16 @@ const CartContext: FC<Props> = ({ children }) => {
   const DeleteCart = (index: number) => {
     setTable(table?.filter(cart => cart?.id !== index));
   };
+  const MinusCart = () => {
+    quantity >= 2 && setQuantity((quantity ?? 0) - 1);
+  };
+  const PlusCart = () => {
+    setQuantity((quantity ?? 0) + 1);
+  };
   return (
-    <MyCart.Provider value={{ table, AddToCart, DeleteCart }}>
+    <MyCart.Provider
+      value={{ table, quantity, AddToCart, DeleteCart, MinusCart, PlusCart }}
+    >
       {children}
     </MyCart.Provider>
   );

@@ -5,7 +5,7 @@ const Panier = () => {
   // const [tableCart, setTableCart] = useState([]);
   const panier = useCart()?.table;
   const Delete = useCart()?.DeleteCart;
-  console.log(panier);
+  const number = useCart()?.quantity || 1;
 
   return (
     <div className="absolute top-[10vh] ml-2 flex h-fit min-h-64 w-[95%]  min-w-[22rem] flex-col rounded-xl bg-White shadow-lg md:ml-4 lg:right-4 lg:w-72 xl:right-0">
@@ -15,19 +15,19 @@ const Panier = () => {
       <div className="flex items-center justify-center py-8 ">
         {panier?.length !== 0 ? (
           <div className=" flex flex-col items-center justify-center gap-6">
-            {panier?.map(items => {
+            {panier?.map((items, index) => {
               return (
                 <div
-                  key={items?.id}
+                  key={index}
                   className="flex items-center justify-around gap-4"
                 >
                   <div className=" size-12 rounded-lg bg-DarkGrayishBlue"></div>
                   <div className="flex flex-col justify-around  ">
                     <p className="text-DarkGrayishBlue">{items.name}</p>
                     <p className=" text-DarkGrayishBlue">
-                      ${items.price}X3
+                      ${items.price}X {number}
                       <span className="pl-2 font-bold text-VeryDarkBlue">
-                        ${items.price}
+                        ${items.price * number}
                       </span>
                     </p>
                   </div>

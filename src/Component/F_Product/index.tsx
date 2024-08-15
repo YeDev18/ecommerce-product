@@ -1,16 +1,13 @@
-import { useState } from 'react';
 import { Product } from '../../data';
 import { Minus, Plus } from '../../picture';
 import { useCart } from '../CartContext';
 const F_Product = () => {
   const panier = useCart();
 
-  const [number, setNumber] = useState(0);
-  const plus = () => {
-    return setNumber(number + 1);
-  };
-  const minus = () => {
-    return number != 0 && setNumber(number - 1);
+  const PlusCart = () => panier?.PlusCart;
+
+  const MinusCart = () => {
+    return panier?.MinusCart;
   };
   const handleClick = (index: number) => {
     panier?.AddToCart(Product[index]);
@@ -58,16 +55,16 @@ const F_Product = () => {
           <div className="flex h-14 w-full flex-row rounded-lg bg-LightGrayishBlue lg:w-[10.5rem]">
             <button
               className="flex w-1/3 items-center justify-center text-firstPrimary"
-              onClick={minus}
+              onClick={MinusCart()}
             >
               <Minus />
             </button>
             <p className="flex w-1/3 items-center justify-center font-semibold text-VeryDarkBlue">
-              {number}
+              {panier?.quantity}
             </p>
             <button
               className="flex w-1/3 items-center justify-center font-bold text-firstPrimary"
-              onClick={plus}
+              onClick={PlusCart()}
             >
               <Plus />
             </button>
