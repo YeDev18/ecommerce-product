@@ -3,7 +3,8 @@ import { Product } from '../../data';
 import { Minus, Plus } from '../../picture';
 import { useCart } from '../CartContext';
 const F_Product = () => {
-  const panier = useCart()?.table;
+  const panier = useCart();
+
   const [number, setNumber] = useState(0);
   const plus = () => {
     return setNumber(number + 1);
@@ -12,9 +13,7 @@ const F_Product = () => {
     return number != 0 && setNumber(number - 1);
   };
   const handleClick = (index: number) => {
-    const bom = [...(panier || []), Product[index]];
-    console.log(bom);
-    // console.log(Product[index]);
+    panier?.AddToCart(Product[index]);
   };
   return (
     <div className="container mx-auto flex flex-col justify-between lg:h-[85vh] lg:flex-row lg:items-center lg:gap-8 lg:px-14">

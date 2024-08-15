@@ -2,6 +2,7 @@ export const Headers = ['Collection', 'Men', 'Women', 'About', 'Contact'];
 
 export const Product = [
   {
+    id: 1,
     category: 'SNEAKER COMPAGNY',
     name: 'Fall Limited Edition Sneakers',
     description: `These low-profile sneakers are your perfect casual wear companion.
