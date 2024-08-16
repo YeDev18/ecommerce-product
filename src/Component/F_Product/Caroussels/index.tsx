@@ -15,7 +15,7 @@ const Caroussels: FC<Carrousel> = ({ data }) => {
   };
   const handleClickProduct = (dataImages: string[]) => {
     return (
-      <div className="fixed inset-0 flex size-full flex-col items-center justify-center gap-4">
+      <div className="fixed inset-0 hidden size-full flex-col items-center justify-center gap-4 lg:flex">
         <div
           className="absolute z-0 size-full bg-VeryDarkBlue/40"
           onClick={() => setClickProduct(false)}
