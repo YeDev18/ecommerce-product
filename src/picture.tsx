@@ -68,7 +68,7 @@ export const Next = ({ onClick }) => {
   return (
     <button
       onClick={onClick}
-      className="rounded-full bg-LightGrayishBlue p-4 opacity-75 transition-all  hover:opacity-100 "
+      className="rounded-full bg-LightGrayishBlue py-3 pl-4 pr-3  "
     >
       <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -100,7 +100,7 @@ export const Previous = ({ onClick }) => {
   return (
     <button
       onClick={onClick}
-      className=" rounded-full bg-LightGrayishBlue p-4 opacity-75 transition-all  hover:opacity-100 "
+      className=" rounded-full bg-LightGrayishBlue py-3 pl-3 pr-4  "
     >
       <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
         <path
