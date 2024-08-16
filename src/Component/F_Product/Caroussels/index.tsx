@@ -1,12 +1,12 @@
 import { FC, useState } from 'react';
-import { Close, Next, Previous } from '../../../picture';
+import { CloseGood, Next, Previous } from '../../../picture';
 type Carrousel = {
   data: string[];
 };
 
 const Caroussels: FC<Carrousel> = ({ data }) => {
   const [slides, setSlides] = useState<number>(0);
-  const [clikProduct, setClickProduct] = useState(false);
+  const [clikProduct, setClickProduct] = useState<boolean>(false);
   const nextSlide = () => {
     setSlides(slides === data.length - 1 ? 0 : slides + 1);
   };
@@ -15,12 +15,23 @@ const Caroussels: FC<Carrousel> = ({ data }) => {
   };
   const handleClickProduct = (dataImages: string[]) => {
     return (
-      <div className="fixed inset-0 flex size-full flex-col items-center justify-center gap-4 bg-VeryDarkBlue/40">
-        <div className="flex w-[28rem] flex-col gap-4 ">
-          <div className="flex w-full justify-end  text-LightGrayishBlue ">
-            <Close />
-          </div>
-          <div className="flow-root size-full overflow-y-hidden lg:size-[28rem] lg:overflow-y-hidden lg:rounded-lg">
+      <div className="fixed inset-0 flex size-full flex-col items-center justify-center gap-4">
+        <div
+          className="absolute z-0 size-full bg-VeryDarkBlue/40"
+          onClick={() => setClickProduct(false)}
+        ></div>
+        <div className="absolute z-0 flex w-[30rem] flex-col gap-4">
+          <button
+            className="flex w-full justify-end  text-LightGrayishBlue"
+            onClick={() => setClickProduct(false)}
+          >
+            <CloseGood />
+          </button>
+          <div className="flow-root size-full overflow-y-hidden lg:size-[30rem] lg:overflow-y-hidden lg:rounded-lg">
+            <div className=" absolute inset-2/4 flex w-[105%] -translate-x-2/4 items-center justify-between ">
+              <Previous onClick={prevSlide} />
+              <Next onClick={nextSlide} />
+            </div>
             {dataImages.map((items, index) => {
               return (
                 <img
@@ -34,7 +45,7 @@ const Caroussels: FC<Carrousel> = ({ data }) => {
               );
             })}
           </div>
-          <div className="hidden w-[28rem] flex-row justify-between lg:flex">
+          <div className="hidden w-[30rem] flex-row justify-between lg:flex">
             {data.map((items, index) => {
               return (
                 <button
@@ -61,7 +72,10 @@ const Caroussels: FC<Carrousel> = ({ data }) => {
         <Previous onClick={prevSlide} />
         <Next onClick={nextSlide} />
       </div>
-      <div className="size-full overflow-y-hidden lg:size-[28rem] lg:overflow-y-hidden lg:rounded-lg">
+      <div
+        className="size-full overflow-y-hidden lg:size-[28rem] lg:overflow-y-hidden lg:rounded-lg"
+        onClick={() => setClickProduct(true)}
+      >
         {data.map((items, index) => {
           return (
             <img
@@ -91,7 +105,7 @@ const Caroussels: FC<Carrousel> = ({ data }) => {
           );
         })}
       </div>
-      {handleClickProduct(data)}
+      {clikProduct && handleClickProduct(data)}
     </div>
   );
 };
