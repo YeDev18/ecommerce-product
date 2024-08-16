@@ -2,11 +2,13 @@ import { useState } from 'react';
 import picture from '../../assets/images/image-avatar.png';
 import { Headers } from '../../data';
 import { Cart, Close, Logo, Menu } from '../../picture';
+import { useCart } from '../CartContext';
 import Panier from './Panier';
 
 const Header = () => {
   const [open, setOpen] = useState(true);
   const [showCart, setShowCart] = useState(false);
+  const panier = useCart()?.table;
   const handleClick = () => {
     return setOpen(!open);
   };
@@ -68,7 +70,7 @@ const Header = () => {
         </div>
         <div className="flex items-center justify-center gap-4 md:gap-8 ">
           <button
-            className="cursor-pointer"
+            className={`${(panier?.length || -1) >= 0 && `cart before:content-['3']`} cursor-pointer`}
             onClick={() => setShowCart(!showCart)}
           >
             <Cart />

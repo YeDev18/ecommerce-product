@@ -25,7 +25,7 @@ const Panier = () => {
                   <div className="flex flex-col justify-around  ">
                     <p className="text-DarkGrayishBlue">{items.name}</p>
                     <p className=" text-DarkGrayishBlue">
-                      ${items.price}X {number}
+                      ${items.price} X {number}
                       <span className="pl-2 font-bold text-VeryDarkBlue">
                         ${items.price * number}
                       </span>

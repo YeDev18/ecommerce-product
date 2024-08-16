@@ -36,4 +36,25 @@
   .header:hover:after {
     background-color: hsl(26, 100%, 55%);
   }
+  .cart {
+    position: relative;
+  }
+  .cart::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    content: '';
+    font-size: 10px;
+    height: 18px;
+    width: 22px;
+    border-radius: 40%;
+    color: hsl(0, 0%, 100%);
+    font-weight: 600;
+
+    background-color: hsl(26, 100%, 55%);
+    position: absolute;
+    top: -15px;
+    right: -10px;
+  }
 }
