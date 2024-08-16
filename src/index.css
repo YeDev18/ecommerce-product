@@ -44,7 +44,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    content: '';
+    content: attr(data-cart-items);
     font-size: 10px;
     height: 18px;
     width: 22px;

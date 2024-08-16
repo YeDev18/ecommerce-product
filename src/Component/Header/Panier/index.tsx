@@ -8,7 +8,7 @@ const Panier = () => {
   const number = useCart()?.quantity || 1;
 
   return (
-    <div className="absolute top-[10vh] ml-2 flex h-fit min-h-64 w-[95%]  min-w-[22rem] flex-col rounded-xl bg-White shadow-lg md:ml-4 lg:right-4 lg:w-72 xl:right-0">
+    <div className="absolute top-[10vh] z-40 ml-2 flex h-fit min-h-64 w-[95%]  min-w-[22rem] flex-col rounded-xl bg-White shadow-lg md:ml-4 lg:right-4 lg:w-72 xl:right-0">
       <div className="border-b border-GrayishBlue">
         <h3 className="py-6 pl-8 text-lg font-semibold">Cart</h3>
       </div>
@@ -21,7 +21,13 @@ const Panier = () => {
                   key={index}
                   className="flex items-center justify-around gap-4"
                 >
-                  <div className=" size-12 rounded-lg bg-DarkGrayishBlue"></div>
+                  <div className=" size-12 rounded-lg bg-DarkGrayishBlue">
+                    <img
+                      src={items.image}
+                      alt={items.name}
+                      className="size-full rounded-lg"
+                    />
+                  </div>
                   <div className="flex flex-col justify-around  ">
                     <p className="text-DarkGrayishBlue">{items.name}</p>
                     <p className=" text-DarkGrayishBlue">

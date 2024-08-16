@@ -7,6 +7,8 @@ type Table = {
   description: string;
   price: number;
   percentReduce: number;
+  image: string;
+  images: string[];
 };
 
 type Context = {
@@ -24,6 +26,8 @@ interface Product {
   description: string;
   price: number;
   percentReduce: number;
+  image: string;
+  images: string[];
 }
 
 type Props = {
@@ -36,7 +40,7 @@ const CartContext: FC<Props> = ({ children }) => {
   const [quantity, setQuantity] = useState<number>(1);
   const [table, setTable] = useState<Table[]>([]);
   const AddToCart = (product: Product) => {
-    setTable([...table, product]);
+    !table.includes(product) && setTable([...table, product]);
   };
   const DeleteCart = (index: number) => {
     setTable(table?.filter(cart => cart?.id !== index));

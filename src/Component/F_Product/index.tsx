@@ -1,6 +1,7 @@
 import { Product } from '../../data';
 import { Minus, Plus } from '../../picture';
 import { useCart } from '../CartContext';
+import Caroussels from './Caroussels';
 const F_Product = () => {
   const panier = useCart();
 
@@ -14,16 +15,13 @@ const F_Product = () => {
   };
   return (
     <div className="container mx-auto flex flex-col justify-between lg:h-[85vh] lg:flex-row lg:items-center lg:gap-8 lg:px-14">
-      <div className="hidden w-1/2 flex-col gap-y-4 lg:flex">
-        <div className="size-[28rem] rounded-lg bg-SecondPrimary"></div>
-        <div className="flex w-[28rem] flex-row justify-between">
-          <div className="size-20 rounded-lg bg-SecondPrimary "></div>
-          <div className="size-20 rounded-lg bg-SecondPrimary "></div>
-          <div className="size-20 rounded-lg bg-SecondPrimary "></div>
-          <div className="size-20 rounded-lg bg-SecondPrimary "></div>
-        </div>
+      <div className="h-[50vh] w-full lg:flex lg:w-1/2">
+        <Caroussels data={Product[0].images} />
       </div>
-      <div className="h-[40vh] bg-firstPrimary lg:hidden "></div>
+
+      {/* <div className="h-[40vh] bg-firstPrimary lg:hidden ">
+        <Caroussels data={Product[0].images} />
+      </div> */}
       <div className="flex flex-col justify-start gap-4 p-4 lg:w-1/2 lg:gap-8 lg:py-0">
         <h4 className="text-sm font-semibold tracking-wide text-firstPrimary lg:text-lg lg:tracking-widest">
           {Product[0].category}

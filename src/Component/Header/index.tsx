@@ -70,7 +70,8 @@ const Header = () => {
         </div>
         <div className="flex items-center justify-center gap-4 md:gap-8 ">
           <button
-            className={`${(panier?.length || -1) >= 0 && `cart before:content-['3']`} cursor-pointer`}
+            data-cart-items={panier?.length || 0}
+            className={`${(panier?.length || -1) >= 0 && `cart `} cursor-pointer`}
             onClick={() => setShowCart(!showCart)}
           >
             <Cart />
