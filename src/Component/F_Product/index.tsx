@@ -19,9 +19,6 @@ const F_Product = () => {
         <Caroussels data={Product[0].images} />
       </div>
 
-      {/* <div className="h-[40vh] bg-firstPrimary lg:hidden ">
-        <Caroussels data={Product[0].images} />
-      </div> */}
       <div className="flex flex-col justify-start gap-4 p-4 lg:w-1/2 lg:gap-8 lg:py-0">
         <h4 className="text-sm font-semibold tracking-wide text-firstPrimary lg:text-lg lg:tracking-widest">
           {Product[0].category}
@@ -78,7 +75,9 @@ const F_Product = () => {
                 fill-rule="nonzero"
               />
             </svg>
-            <p className="font-semibold text-LightGrayishBlue">Add Cart</p>
+            <span className="font-semibold text-LightGrayishBlue">
+              Add Cart
+            </span>
           </button>
         </div>
       </div>

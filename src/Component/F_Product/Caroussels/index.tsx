@@ -53,9 +53,9 @@ const Caroussels: FC<Carrousel> = ({ data }) => {
                   key={index}
                   onClick={() => setSlides(index)}
                 >
-                  <div
-                    className={`absolute size-20 bg-White opacity-50 ${slides === index ? 'opacity-50' : 'opacity-0'}`}
-                  ></div>
+                  <span
+                    className={`absolute inset-0 size-full bg-White opacity-50 ${slides === index ? 'opacity-50' : 'opacity-0'}`}
+                  ></span>
                   <img src={items} alt="imgages" className={'flex w-full'} />
                 </button>
               );
@@ -93,14 +93,14 @@ const Caroussels: FC<Carrousel> = ({ data }) => {
         {data.map((items, index) => {
           return (
             <button
-              className={`size-20 overflow-hidden rounded-lg   ${slides === index && 'border-2 border-firstPrimary'} relative`}
+              className={`w-20 overflow-hidden rounded-lg   ${slides === index && 'border-2 border-firstPrimary'} relative`}
               key={index}
               onClick={() => setSlides(index)}
             >
-              <div
-                className={`absolute size-20 bg-White opacity-50 ${slides === index ? 'opacity-50' : 'opacity-0'}`}
-              ></div>
-              <img src={items} alt="imgages" className={'flex w-full'} />
+              <span
+                className={`absolute inset-0 size-full bg-White opacity-50 ${slides === index ? 'opacity-50' : 'opacity-0'}`}
+              ></span>
+              <img src={items} alt="images" className={'flex w-full'} />
             </button>
           );
         })}
